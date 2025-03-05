@@ -1,14 +1,35 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zuora Payment Page</title>
+    <title>Zuora Hosted Payment Page</title>
 </head>
 <body>
-    <h2>Test Hosted Payment Page</h2>
-    <iframe src="https://test.eu.zuora.com/apps/PublicHostedPageLite.do?token=4lPXUmMQlvUDVNhNTEDJaB18ZBCi8Gkn&tenantId=20000561&id=8acce135953bdbd30195607355f76d99"
-            width="100%" height="600px" style="border: none;"></iframe>
+
+    <h1>Test Hosted Payment Page</h1>
+    <div id="zuora-payment-form"></div> 
+
+    <!-- Load Zuora SDK -->
+    <script src="https://static.zuora.com/Resources/libs/hostedpaypage_v1.1.0.js"></script>
+
+    <script>
+     
+        window.onload = function() {
+            if (typeof Z !== "undefined") {
+                Z.render({
+                    tenantId: "20000561", 
+                    id: "8acce135953bdbd30195607355f76d99", 
+                    token: "3SqhHY3wQbgt3mIQ6vU2V0tV2LANzuBH", 
+                    url: "https://test.eu.zuora.com/apps/PublicHostedPageLite.do",
+                    style: "inline", 
+                    submitEnabled: true 
+                });
+            } else {
+                console.error("Zuora SDK failed to load.");
+            }
+        };
+    </script>
+
 </body>
 </html>
