@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="Content-Security-Policy" content="script-src 'self' https://static.zuora.com;">
     <title>Zuora Hosted Payment Page</title>
 </head>
 <body>
@@ -11,7 +12,7 @@
     <div id="zuora-payment-form"></div> 
 
     <!-- Load Zuora SDK -->
-<script src="https://static.zuora.com/Resources/libs/hostedpaypage_v1.1.0.js"></script>
+<script src="https://static.zuora.com/Resources/libs/hostedpaypage_v1.3.0.js"></script>
 
 
 
@@ -22,7 +23,7 @@
                 Z.render({
                     tenantId: "20000561", 
                     id: "8acce135953bdbd30195607355f76d99", 
-                    token: "yGkGtQUE4uQLcVgE91Y28W38fENHT2gk", 
+                    token: "ey5ZWySl035Ehhj2j77TZ6WLmFEkxJHH", 
                     url: "https://test.eu.zuora.com/apps/PublicHostedPageLite.do",
                     style: "inline", 
                     submitEnabled: true 
