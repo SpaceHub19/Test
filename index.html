@@ -80,8 +80,8 @@
     var params = {
         tenantId: 20000561, 
         id: "8acce27195656acd01956fc0091e42a8",  
-        token: "S133pjhuUqVqzEFWl3XKhqJZCFCubKNE", 
-        signature: "smU1Yih4MizVTZkJXBJJbaf5H6g7FfnjE0JoXeKgbv4FhknOgA0XwjWuEC/KAtlzeYlYSeSU+NV+Dk9WwIs5QRsPguQumSKYYxeWpAk8qU4XLSbYeohxPW5xSzS48du81aNUaIULO0yt5fZ+V3L38plO3Lzb3CtuLJqbkFPL0csraIGeBx74cV/YTZ9pCqP1HPLO2UWsZHODDKJTfMR2PUYhUDzAwoADbSQ0SIIhbZiWgVdyEYd1i+6Upc9JoKi2O5vubt7cC20IP85QM1ME10qo1BmwTUiXFGm6bx3sE7MHPSnmYOkhAIDtFcbyeNxlzyIrtJjk+ysnaiT+LLXkxA==",  // Full RSA signature
+        token: "Q6abyW6ERajLYWNWXuK3ffDEK6kpcyBE", 
+        signature: "Tq0mLvq44M9dnTy/54oaA7gAMHc/Y9hAvH4boTVuXmGtziYVrrsGY8MGP4lqDcNQMcRj3aEaR8mzRqr0pI2umFayGSWg/1LCFIIf9ye3XsAuJaoGf63HYmDyNa6k/h3JQduGzFXt1zA7ac2SUdSRwKjbNCraken9CGNnnRpgm1Jrss7eGU+55e1XI+Oo2mS7MCeQ8VH3t8f/7ncGtsKbCkzIFRZzyzihtcS9eWxuYvzLPisLNu8wElIppACinSm4HygNFod1zD/Q+kxzROJ9qqFt8acu/bKZ+aFnJaBO/mBeFgxcliFuNe/fyTipNRJSEQYnC3CepUHXg5YR7PRmjQ==",  // Full RSA signature
         style: "Inline",  // Choose the payment form style (can be 'overlay', 'embedded', etc.)
         key: "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwTHbffQM3oq5kjMRqhdYPN7bT574Td5w0xYY3CzKrTyUMfzH1i7ZQAFpq6qBQAi1VEUYi9aJUQCPx6xGs7eTDf001Zxx6895u8DoM5q9HprOBruEvvEwWOiQz2kuG7WisygEhBhrxukiRaodleA/AD7KDgudRdroCnYy+mpXsmHB/ALQuHj2JOvB+KPSEsP3anj+xF0gjByBSHYg/IBnOUz2SVWAyy0AyyosqTIsVC8buy+8RoWTsyRLfRR+f70cVAGYKbigfHQFdB5kP2NvytVfMtTQAtkKgdXMOuKnL3bHjAfWUKDW2wKyYiPHBb2Z+9ZIAvAKKSpzgMtjPQNv3QIDAQAB",  // RSA public key
         submitEnabled: "true",  
@@ -116,7 +116,46 @@
     </script>
 </head>
 
-<body onload="loadHostedPage();">
-    <div id="zuora_payment"></div>  <!-- Zuora payment page container -->
+<body onload="LoadPaymentPages(jsodata, prepopulatedata, req)">
+    <nav class="navigation container">
+        <div class="nav-brand">Zuora Payment Pages 2.0 Integration Guide</div>
+        <ul class="list-non-bullet nav-pills">
+            <li class="list-item-inline">
+                <a href="/" class="link">Home</a>
+            </li>
+            <li class="nav-pills list-item-inline">
+                <a href="https://knowledgecenter.zuora.com/Billing/Billing_and_Payments/LA_Hosted_Payment_Pages/B_Payment_Pages_2.0">Knowledge Center</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="hide container hero" id="attemptexceed">
+        <h2 class="hero-heading">
+            Attempt <span class="heading-inverted">exceed</span>
+            the limitation :( We will refresh the page in 5 seconds
+        </h2>
+    </div>
+
+    <div id="zuora_payment" class="container container-center"></div>
+    <div id="checkBoxDiv" class="list-item" hidden>
+        <input id="agreement" type="checkbox">agreement
+    </div>
+
+    <footer class="footer">
+        <div class="footer-header">Deliver the ultimate subscriber experience</div>
+        <ul>
+            <li class="list-item-inline">
+                <a class="link" href="https://www.zuora.com/products/billing-software/">Billing</a>
+            </li>
+            <li class="list-item-inline">
+                <a class="link" href="https://www.zuora.com/products/collect/">Zuora Collect</a>
+            </li>
+            <li class="list-item-inline">
+                <a class="link" href="https://www.zuora.com/products/revenue/">Zuora Revenue</a>
+            </li>
+            <li class="list-item-inline">
+                <a class="link" href="https://www.zuora.com/products/zuora-central-platform/">Central Platform</a>
+            </li>
+        </ul>
+    </footer>
 </body>
-</html>
